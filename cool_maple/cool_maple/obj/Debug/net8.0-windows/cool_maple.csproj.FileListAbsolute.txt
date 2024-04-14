@@ -23,4 +23,3 @@ C:\coding_toy\cool_maple\cool_maple\cool_maple\obj\Debug\net8.0-windows\ref\cool
 C:\coding_toy\cool_maple\cool_maple\cool_maple\obj\Debug\net8.0-windows\cool_maple.csproj.AssemblyReference.cache
 C:\coding_toy\cool_maple\cool_maple\cool_maple\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\coding_toy\cool_maple\cool_maple\cool_maple\obj\Debug\net8.0-windows\cool_maple.csproj.Up2Date
-C:\coding_toy\cool_maple\cool_maple\cool_maple\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
