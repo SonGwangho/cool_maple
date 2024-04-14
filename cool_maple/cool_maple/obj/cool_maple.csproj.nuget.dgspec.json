@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple\\cool_maple.csproj": {}
+    "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple.csproj": {}
   },
   "projects": {
-    "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple\\cool_maple.csproj": {
+    "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple\\cool_maple.csproj",
+        "projectUniqueName": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple.csproj",
         "projectName": "cool_maple",
-        "projectPath": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple\\cool_maple.csproj",
+        "projectPath": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple.csproj",
         "packagesPath": "C:\\Users\\광호\\.nuget\\packages\\",
-        "outputPath": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple\\obj\\",
+        "outputPath": "C:\\coding_toy\\cool_maple\\cool_maple\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\광호\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,12 +44,6 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
