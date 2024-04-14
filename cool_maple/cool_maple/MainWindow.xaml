@@ -4,24 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cool_maple"
-        xmlns:vm="clr-namespace:cool_maple.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <vm:CharacterBasicViewModel/>
-    </Window.DataContext>
-    <DockPanel>
-        <TextBox DockPanel.Dock="Top" x:Name="CharacterName" Text="날속인건희"></TextBox>
-        <Button DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterName}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.WorldName}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterGender}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterClass}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterClassLevel}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterLevel}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterExp}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterExpRate}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterGuildName}"></TextBlock>
-        <Image DockPanel.Dock="Top" Source="{Binding BasicProperties.CharacterImageUrl}"/>
-    </DockPanel>
+    <Grid>
+
+    </Grid>
 </Window>
