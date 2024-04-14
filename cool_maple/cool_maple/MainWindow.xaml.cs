@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using cool_maple.API;
+using cool_maple.ViewModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +21,16 @@ namespace cool_maple
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            await MapleAPI.SetCharacter(this.CharacterName.Text);
+            var viewModel = DataContext as CharacterBasicViewModel;
+            if (viewModel != null)
+            {
+                await viewModel.SetBasic();
+            }
         }
     }
 }
