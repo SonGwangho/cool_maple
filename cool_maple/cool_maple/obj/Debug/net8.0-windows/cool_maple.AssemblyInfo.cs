@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cool_maple")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f93dbc8c8dae8f2df95ee6c0e35b5b7cdcd5232")]
 [assembly: System.Reflection.AssemblyProductAttribute("cool_maple")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cool_maple")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

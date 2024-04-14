@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "euVxdI5AYWe1tZ93xHSucLY4tRWFZPIxI2mffpNpssO/vNn+1wMMbNcg0A4RDV0bTrVDR5keh4r/+5gQhYmTlg==",
+  "dgSpecHash": "09aTSyRAJm7Xbi2yAnF+nEGhVqndJHARnK/MQX7Vwj0UB+uom3eUIys9wt/4X9XutNUM5nvN/4wSE1+FujNUCQ==",
   "success": true,
-  "projectFilePath": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\coding_toy\\cool_maple\\cool_maple\\cool_maple\\cool_maple.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\광호\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
