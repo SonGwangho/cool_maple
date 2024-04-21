@@ -11,6 +11,7 @@ using System.Web;
 using Newtonsoft.Json.Linq;
 using System.Xml.Linq;
 using cool_maple.Model;
+using System.Security.Cryptography;
 
 namespace cool_maple.API
 {
@@ -80,6 +81,50 @@ namespace cool_maple.API
 
             string responseString = await response.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<CharacterBasicModel>(responseString);
+        }
+
+        public static async Task<UserUnionModel> getUnion()
+        {
+            var response = await SendApi("v1/user/union", new
+            {
+                ocid = ocid
+            });
+
+            string responseString = await response.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<UserUnionModel>(responseString);
+        }
+
+        public static async Task<CharacterStatModel> getStat()
+        {
+            var response = await SendApi("/v1/character/stat", new
+            {
+                ocid = ocid
+            });
+
+            string responseString = await response.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<CharacterStatModel>(responseString);
+        }
+
+        public static async Task<CharacterItemEquipmentModel> getEquipment()
+        {
+            var response = await SendApi("v1/character/item-equipment", new
+            {
+                ocid = ocid
+            });
+
+            string responseString = await response.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<CharacterItemEquipmentModel>(responseString);
+        }
+
+        public static async Task<CharacterSetEffectModel> getSetEffect()
+        {
+            var response = await SendApi("v1/character/set-effect", new
+            {
+                ocid = ocid
+            });
+
+            string responseString = await response.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<CharacterSetEffectModel>(responseString);
         }
     }
 }
