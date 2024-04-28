@@ -18,21 +18,23 @@
             </ResourceDictionary.MergedDictionaries>
             <converter:Float2String x:Key="Float2String"/>
             <converter:Int2String x:Key="Int2String"/>
+            <converter:AttachLevel x:Key="AttachLevel"/>
+            <converter:AttachFloor x:Key="AttachFloor"/>
         </ResourceDictionary>
     </Window.Resources>
     <DockPanel>
         <Label DockPanel.Dock="Top" Style="{StaticResource LevelStyle}" Content="테스트"/>
         <TextBox DockPanel.Dock="Top" x:Name="CharacterName" Text="날속인건희"></TextBox>
         <Button DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterName}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.WorldName}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterGender}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClass}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClassLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExp, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExpRate, Converter={StaticResource Float2String}}" Style="{StaticResource BasicInfoStyle}"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterGuildName}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterName}" Style="{StaticResource CharacterNameStyle}"/>
+        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.WorldName}" Style="{StaticResource BasicInfoStyle}"/>-->
+        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterGender}" Style="{StaticResource BasicInfoStyle}"/>-->
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClass}" Style="{StaticResource ClassStyle}"/>
+        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClassLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>-->
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterLevel, Converter={StaticResource AttachLevel}}" Style="{StaticResource LevelStyle}"/> 
+        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExp, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>-->
+        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExpRate, Converter={StaticResource Float2String}}" Style="{StaticResource BasicInfoStyle}"/>-->
+        <Label DockPanel.Dock="Top" Tag="길드" Content="{Binding BasicProperties.CharacterGuildName}" Style="{StaticResource BasicInfoStyle}"/>
         <Image DockPanel.Dock="Top" Source="{Binding BasicProperties.CharacterImageUrl}"/>
     </DockPanel>
 </Window>

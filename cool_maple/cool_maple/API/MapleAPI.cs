@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Net.Http.Headers;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Web;
 using Newtonsoft.Json.Linq;
-using System.Xml.Linq;
 using cool_maple.Model;
-using System.Security.Cryptography;
 
 namespace cool_maple.API
 {
