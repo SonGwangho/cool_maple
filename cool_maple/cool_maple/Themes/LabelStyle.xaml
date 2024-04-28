@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="LevelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="#Maplestory"/>
+        <Setter Property="Background" Value="#9aa2ab"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid>
+                        <Border BorderBrush="#9aa2ab" BorderThickness="1" CornerRadius="0 0 10 10"
+                                Background="{TemplateBinding Background}" />
+                        <TextBlock 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="{TemplateBinding Foreground}"
+                            Margin="0 5 0 0"
+                            Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ClassStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="#Maplestory"/>
+        <Setter Property="Background" Value="#9aa2ab"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid>
+                        <Border BorderBrush="#9aa2ab" BorderThickness="1" CornerRadius="10"
+                        Background="{TemplateBinding Background}" />
+                        <TextBlock 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="{TemplateBinding Foreground}"
+                    Margin="5 5 5 5"
+                    Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BasicInfoStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="#Maplestory"/>
+        <Setter Property="Background" Value="#caced0"/>
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid>
+                        <Border BorderBrush="#9aa2ab" BorderThickness="1" CornerRadius="10"
+                    Background="{TemplateBinding Background}" />
+                        <TextBlock 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="{TemplateBinding Foreground}"
+                Margin="5 5 5 5"
+                Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

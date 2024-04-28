@@ -4,24 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:cool_maple"
+        xmlns:converter="clr-namespace:cool_maple.Converter"
         xmlns:vm="clr-namespace:cool_maple.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
         <vm:CharacterBasicViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/LabelStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converter:Float2String x:Key="Float2String"/>
+            <converter:Int2String x:Key="Int2String"/>
+        </ResourceDictionary>
+    </Window.Resources>
     <DockPanel>
+        <Label DockPanel.Dock="Top" Style="{StaticResource LevelStyle}" Content="테스트"/>
         <TextBox DockPanel.Dock="Top" x:Name="CharacterName" Text="날속인건희"></TextBox>
         <Button DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterName}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.WorldName}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterGender}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterClass}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterClassLevel}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterLevel}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterExp}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterExpRate}"></TextBlock>
-        <TextBlock DockPanel.Dock="Top" Text="{Binding BasicProperties.CharacterGuildName}"></TextBlock>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterName}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.WorldName}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterGender}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClass}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClassLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExp, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExpRate, Converter={StaticResource Float2String}}" Style="{StaticResource BasicInfoStyle}"/>
+        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterGuildName}" Style="{StaticResource BasicInfoStyle}"/>
         <Image DockPanel.Dock="Top" Source="{Binding BasicProperties.CharacterImageUrl}"/>
     </DockPanel>
 </Window>
