@@ -8,7 +8,7 @@ namespace cool_maple.Model
         public string CharacterClass { get; set; }
 
         [JsonProperty("final_stat")]
-        public FinalStatModel FinalStat { get; set; }
+        public FinalStatModel[] FinalStat { get; set; }
 
         [JsonProperty("remain_ap")]
         public uint RemainAp { get; set; }

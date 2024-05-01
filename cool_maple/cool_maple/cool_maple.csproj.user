@@ -7,10 +7,30 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\UserControl\DetatilStatView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControl\ItemEquipmentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\UserControl\UnionInfoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\LabelStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControl\DetatilStatView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControl\ItemEquipmentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControl\UnionInfoView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:cool_maple"
         xmlns:converter="clr-namespace:cool_maple.Converter"
         xmlns:vm="clr-namespace:cool_maple.ViewModel"
+        xmlns:uControls="clr-namespace:cool_maple.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Width="700">
     <Window.DataContext>
-        <vm:CharacterBasicViewModel/>
+        <vm:MainWindowViewModel/>
     </Window.DataContext>
     <Window.Resources>
         <ResourceDictionary>
@@ -22,19 +23,50 @@
             <converter:AttachFloor x:Key="AttachFloor"/>
         </ResourceDictionary>
     </Window.Resources>
-    <DockPanel>
-        <Label DockPanel.Dock="Top" Style="{StaticResource LevelStyle}" Content="테스트"/>
+    <StackPanel>
+        <Border CornerRadius="50"/>
         <TextBox DockPanel.Dock="Top" x:Name="CharacterName" Text="날속인건희"></TextBox>
         <Button DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterName}" Style="{StaticResource CharacterNameStyle}"/>
-        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.WorldName}" Style="{StaticResource BasicInfoStyle}"/>-->
-        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterGender}" Style="{StaticResource BasicInfoStyle}"/>-->
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClass}" Style="{StaticResource ClassStyle}"/>
-        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClassLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>-->
-        <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterLevel, Converter={StaticResource AttachLevel}}" Style="{StaticResource LevelStyle}"/> 
-        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExp, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}"/>-->
-        <!--<Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterExpRate, Converter={StaticResource Float2String}}" Style="{StaticResource BasicInfoStyle}"/>-->
-        <Label DockPanel.Dock="Top" Tag="길드" Content="{Binding BasicProperties.CharacterGuildName}" Style="{StaticResource BasicInfoStyle}"/>
-        <Image DockPanel.Dock="Top" Source="{Binding BasicProperties.CharacterImageUrl}"/>
-    </DockPanel>
+        <Grid Height="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <Label DockPanel.Dock="Top" Content="{Binding BasicProperties.CharacterClass}" Style="{StaticResource ClassStyle}" Margin="10"/>
+                <Label DockPanel.Dock="Bottom" Content="{Binding PopularityProperties.Popularity, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}" Tag="인기도" Margin="10 0 10 10"/>
+                <Label DockPanel.Dock="Bottom" Content="{Binding CharacterDojangProperties.DojangBestFloor, Converter={StaticResource AttachFloor}}" Style="{StaticResource BasicInfoStyle}" Tag="무릉도장" Margin="10 0 10 3"/>
+                <Label DockPanel.Dock="Bottom" Content="{Binding UserUnionProperties.UnionLevel, Converter={StaticResource Int2String}}" Style="{StaticResource BasicInfoStyle}" Tag="유니온" Margin="10 0 10 3"/>
+                <Label DockPanel.Dock="Bottom"/>
+            </DockPanel>
+            <DockPanel Grid.Column="1" Background="#f2f2f4">
+                <Label DockPanel.Dock="Top" 
+                       Content="{Binding BasicProperties.CharacterLevel, Converter={StaticResource AttachLevel}}" 
+                       Style="{StaticResource LevelStyle}"
+                       Width="100"/>
+                <Label DockPanel.Dock="Bottom" 
+                       Content="{Binding BasicProperties.CharacterName}" 
+                       Style="{StaticResource CharacterNameStyle}"
+                       Width="120"
+                       Margin="0 0 0 10"
+                       />
+                <Image Source="{Binding BasicProperties.CharacterImageUrl}"
+                       Margin="0 30 0 0"/>
+            </DockPanel>
+
+            <DockPanel Grid.Column="2">
+                <Label DockPanel.Dock="Bottom" Content="-" Style="{StaticResource BasicInfoStyle}" Tag="연합" Margin="10 0 10 3"/>
+                <Label DockPanel.Dock="Bottom" Content="{Binding BasicProperties.CharacterGuildName}" Style="{StaticResource BasicInfoStyle}" Tag="길드" Margin="10 0 10 3"/>
+                <Label DockPanel.Dock="Bottom"/>
+            </DockPanel>
+        </Grid>
+        <Grid>
+            <TabControl>
+                <TabItem Header="스탯" Name="StatTab" Content="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type uControls:DetatilStatView}}}"/>
+                <TabItem Header="장비" Name="EquipmentTab" Content="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type uControls:ItemEquipmentView}}}"/>
+                <TabItem Header="유니온" Name="UnionTab" Content="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type uControls:UnionInfoView}}}"/>
+            </TabControl>
+        </Grid>
+    </StackPanel>
 </Window>

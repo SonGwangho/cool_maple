@@ -26,10 +26,13 @@ namespace cool_maple
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             await MapleAPI.SetCharacter(this.CharacterName.Text);
-            var viewModel = DataContext as CharacterBasicViewModel;
+            var viewModel = DataContext as MainWindowViewModel;
             if (viewModel != null)
             {
                 await viewModel.SetBasic();
+                await viewModel.SetPopulatity();
+                await viewModel.SetUnion();
+                await viewModel.SetDojang();
             }
         }
     }

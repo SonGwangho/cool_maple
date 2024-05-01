@@ -119,5 +119,27 @@ namespace cool_maple.API
             string responseString = await response.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<CharacterSetEffectModel>(responseString);
         }
+
+        public static async Task<PopularityModel> getPopularity()
+        {
+            var response = await SendApi("v1/character/popularity", new
+            {
+                ocid = ocid
+            });
+
+            string responseString = await response.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<PopularityModel>(responseString);
+        }
+
+        public static async Task<CharacterDojangModel> getCharacterDojang()
+        {
+            var response = await SendApi("v1/character/dojang", new
+            {
+                ocid = ocid
+            });
+
+            string responseString = await response.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<CharacterDojangModel>(responseString);
+        }
     }
 }
