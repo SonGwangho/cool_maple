@@ -83,6 +83,17 @@ namespace cool_maple.ViewModel
             }
         }
 
+        private string _buffText;
+        public string BuffText
+        {
+            get { return _buffText; }
+            set
+            {
+                _buffText = value;
+                OnPropertyChanged(nameof(BuffText));
+            }
+        }
+
         public async Task SetBasic()
         {
             var response = await MapleAPI.GetBasic();

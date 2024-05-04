@@ -7,6 +7,7 @@
         <Setter Property="Background" Value="#9aa2ab"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
         <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Label">
@@ -17,7 +18,7 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Foreground="{TemplateBinding Foreground}"
-                                Margin="0 5 0 0"
+                                Margin="0 5 0 3"
                                 Text="{TemplateBinding Content}"/>
                     </Grid>
                 </ControlTemplate>
@@ -29,6 +30,7 @@
         <Setter Property="FontFamily" Value="#Maplestory"/>
         <Setter Property="Background" Value="#9aa2ab"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontSize" Value="16"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Label">
@@ -51,6 +53,7 @@
         <Setter Property="FontFamily" Value="#Maplestory"/>
         <Setter Property="Background" Value="#caced0"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Label">
@@ -85,6 +88,7 @@
         <Setter Property="FontFamily" Value="#Maplestory"/>
         <Setter Property="Background" Value="#3cc1d8"/>
         <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="FontSize" Value="14"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Label">
@@ -97,6 +101,108 @@
                                 Foreground="{TemplateBinding Foreground}"
                                 Margin="5 5 5 5"
                                 Text="{TemplateBinding Content}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CombatPowerStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="#Maplestory"/>
+        <Setter Property="Background" Value="#3e6076"/>
+        <Setter Property="Foreground" Value="#d3ebef"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid>
+                        <Border BorderBrush="{TemplateBinding Background}" BorderThickness="1" CornerRadius="10"
+                            Background="{TemplateBinding Background}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="전투력"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Margin="20 0 0 0"/>
+                            <TextBlock Grid.Column="1"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="#f3eecb"
+                                       Margin="5 5 5 5"
+                                       Text="{TemplateBinding Content}"/>
+                            <TextBlock Grid.Column="2"
+                                       Margin="0 0 20 0"/>
+                        </Grid>
+                        
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DetailInfoStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="#Maplestory"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid>
+                        <Border/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Foreground="#e0e6ee"
+                                Margin="10 5 10 5"
+                                Text="{TemplateBinding Tag}"/>
+                            <TextBlock Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Margin="10 5 10 5"
+                                Text="{TemplateBinding Content}"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BuffStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="#Maplestory"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Grid>
+                        <Border/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Foreground="#e0e6ee"
+                                Margin="10 5 10 5"
+                                Text="{TemplateBinding Tag}"/>
+                            <TextBlock Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Margin="10 5 10 5"
+                                Text="{TemplateBinding Content}"/>
+                        </Grid>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

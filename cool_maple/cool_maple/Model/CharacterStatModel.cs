@@ -20,6 +20,6 @@ namespace cool_maple.Model
         public string StatName { get; set; }
 
         [JsonProperty("stat_value")]
-        public float StatValue { get; set; }
+        public decimal StatValue { get; set; }
     }
 }

@@ -1,0 +1,203 @@
+﻿<UserControl x:Class="cool_maple.View.DetatilStatView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:cool_maple.View"
+      xmlns:converter="clr-namespace:cool_maple.Converter"
+      xmlns:vm="clr-namespace:cool_maple.ViewModel"
+      mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Themes/LabelStyle.xaml"/>
+                <ResourceDictionary Source="../../Themes/TabStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converter:Decimal2String x:Key="Decimal2String"/>
+            <converter:Decimal2DotString x:Key="Decimal2DotString"/>
+            <converter:DecimalPercent x:Key="DecimalPercent"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="0 10 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Style="{StaticResource CombatPowerStyle}" 
+               Content="{Binding CharacterStatProperties.FinalStat[42].StatValue, Converter={StaticResource Decimal2String}}"
+               Height="50"/>
+        <Border Grid.Row="1" BorderBrush="#8694a0" 
+                BorderThickness="1" 
+                CornerRadius="10" 
+                Background="#8694a0" 
+                Margin="0 5 0 0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[20].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="HP" Margin="5"/>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[21].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="MP" Margin="5"/>
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[16].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="STR" Margin="5"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[17].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="DEX" Margin="5"/>
+
+                <Label Grid.Row="2" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[18].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="INT" Margin="5"/>
+                <Label Grid.Row="2" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[19].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="LUK" Margin="5"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2" BorderBrush="#6c7884" 
+                BorderThickness="1" 
+                CornerRadius="10" 
+                Background="#6c7884" 
+                Margin="0 5 0 0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[1].StatValue, Converter={StaticResource Decimal2String}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="스탯 공격력" Margin="5"/>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[2].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="데미지" Margin="5"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[4].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="최종 데미지" Margin="5"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[3].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="보스 몬스터 데미지" Margin="5"/>
+                <Label Grid.Row="2" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[5].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="방어율 무시" Margin="5"/>
+                <Label Grid.Row="2" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[32].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="일반 몬스터 데미지" Margin="5"/>
+                <Label Grid.Row="3" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[40].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="공격력" Margin="5"/>
+                <Label Grid.Row="3" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[6].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="크리티컬 확률" Margin="5"/>
+                <Label Grid.Row="4" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[41].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="마력" Margin="5"/>
+                <Label Grid.Row="4" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[7].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="크리티컬 데미지" Margin="5"/>
+                <Label Grid.Row="5" Grid.Column="0"
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Content="{Binding BuffText}"
+                       Tag="재사용 대기시간 감소" Margin="5">
+                </Label>
+                <Label Grid.Row="5" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[30].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="버프 지속 시간" Margin="5"/>       
+                <Label Grid.Row="6" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[35].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="재사용 대기시간 미적용" Margin="5"/>
+                <Label Grid.Row="6" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[36].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="속성 내성 무시" Margin="5"/>
+                <Label Grid.Row="7" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[37].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="상태이상 추가 데미지" Margin="5"/>
+                <Label Grid.Row="7" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[38].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="무기 숙련도" Margin="5"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3" BorderBrush="#6c7884" 
+                BorderThickness="1" 
+                CornerRadius="10" 
+                Background="#6c7884" 
+                Margin="0 5 0 0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[29].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="메소 획득량" Margin="5"/>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[13].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="스타포스" Margin="5"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[28].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="아이템 드롭률" Margin="5"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[14].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="아케인포스" Margin="5"/>
+                <Label Grid.Row="2" Grid.Column="0"
+                       Content="{Binding CharacterStatProperties.FinalStat[39].StatValue, Converter={StaticResource DecimalPercent}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="추가 경험치 획득" Margin="5"/>
+                <Label Grid.Row="2" Grid.Column="1"
+                       Content="{Binding CharacterStatProperties.FinalStat[15].StatValue, Converter={StaticResource Decimal2DotString}}" 
+                       Style="{StaticResource DetailInfoStyle}" 
+                       Tag="어센틱포스" Margin="5"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

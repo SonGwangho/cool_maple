@@ -8,7 +8,8 @@
         xmlns:vm="clr-namespace:cool_maple.ViewModel"
         xmlns:uControls="clr-namespace:cool_maple.View"
         mc:Ignorable="d"
-        Title="MainWindow" Width="700">
+        Background="#343238"
+        Title="MainWindow" Width="700" Height="950">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -16,6 +17,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Themes/LabelStyle.xaml"/>
+                <ResourceDictionary Source="./Themes/TabStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <converter:Float2String x:Key="Float2String"/>
             <converter:Int2String x:Key="Int2String"/>
@@ -23,11 +25,17 @@
             <converter:AttachFloor x:Key="AttachFloor"/>
         </ResourceDictionary>
     </Window.Resources>
-    <StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <Border CornerRadius="50"/>
-        <TextBox DockPanel.Dock="Top" x:Name="CharacterName" Text="날속인건희"></TextBox>
-        <Button DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
-        <Grid Height="200">
+        <TextBox Grid.Row="0" x:Name="CharacterName" Text="날속인건희" KeyDown="CharacterName_KeyDown"></TextBox>
+        <Button Grid.Row="1" DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
+        <Grid Grid.Row="2" Height="200" Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="1.4*"/>
@@ -61,12 +69,21 @@
                 <Label DockPanel.Dock="Bottom"/>
             </DockPanel>
         </Grid>
-        <Grid>
-            <TabControl>
-                <TabItem Header="스탯" Name="StatTab" Content="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type uControls:DetatilStatView}}}"/>
-                <TabItem Header="장비" Name="EquipmentTab" Content="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type uControls:ItemEquipmentView}}}"/>
-                <TabItem Header="유니온" Name="UnionTab" Content="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type uControls:UnionInfoView}}}"/>
+        <Grid Grid.Row="3">
+            <TabControl BorderThickness="0">
+                <TabControl.Background>
+                    <SolidColorBrush Color="#1e2e3a" Opacity="0.6"/>
+                </TabControl.Background>
+                <TabItem Header="스탯" Name="StatTab">
+                    <uControls:DetatilStatView/>
+                </TabItem>
+                <TabItem Header="장비" Name="EquipmentTab">
+                    <uControls:ItemEquipmentView/>
+                </TabItem>
+                <TabItem Header="유니온" Name="UnionTab">
+                    <uControls:UnionInfoView/>
+                </TabItem>
             </TabControl>
         </Grid>
-    </StackPanel>
+    </Grid>
 </Window>

@@ -7,13 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\UserControl\DetatilStatView.xaml.cs">
+    <Compile Update="View\UserControls\DetailStatView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\UserControl\ItemEquipmentView.xaml.cs">
+    <Compile Update="View\UserControls\ItemEquipmentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\UserControl\UnionInfoView.xaml.cs">
+    <Compile Update="View\UserControls\UnionInfoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,13 +24,16 @@
     <Page Update="Themes\LabelStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\UserControl\DetatilStatView.xaml">
+    <Page Update="Themes\TabStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\UserControl\ItemEquipmentView.xaml">
+    <Page Update="View\UserControls\DetailStatView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\UserControl\UnionInfoView.xaml">
+    <Page Update="View\UserControls\ItemEquipmentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserControls\UnionInfoView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

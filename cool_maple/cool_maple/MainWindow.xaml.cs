@@ -21,18 +21,44 @@ namespace cool_maple
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+
+            if (this.CharacterName.Text.Length > 1) CharacterSearch();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            await MapleAPI.SetCharacter(this.CharacterName.Text);
-            var viewModel = DataContext as MainWindowViewModel;
-            if (viewModel != null)
+            CharacterSearch();
+        }
+
+        private async void CharacterName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
             {
-                await viewModel.SetBasic();
-                await viewModel.SetPopulatity();
-                await viewModel.SetUnion();
-                await viewModel.SetDojang();
+                CharacterSearch();
+            }
+        }
+
+        private async void CharacterSearch()
+        {
+            try
+            {
+                await MapleAPI.SetCharacter(this.CharacterName.Text);
+                var viewModel = DataContext as MainWindowViewModel;
+                if (viewModel != null)
+                {
+                    await viewModel.SetBasic();
+                    await viewModel.SetPopulatity();
+                    await viewModel.SetUnion();
+                    await viewModel.SetDojang();
+                    await viewModel.SetStat();
+
+                    viewModel.BuffText = viewModel.CharacterStatProperties.FinalStat[33].StatValue + "초" + " / " + viewModel.CharacterStatProperties.FinalStat[34].StatValue + "%";
+                }
+            }
+            catch
+            {
+                MessageBox.Show("아이디 틀린듯?");
             }
         }
     }

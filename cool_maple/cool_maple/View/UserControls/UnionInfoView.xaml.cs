@@ -18,7 +18,7 @@ namespace cool_maple.View
     /// <summary>
     /// UnionInfoView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class UnionInfoView : Page
+    public partial class UnionInfoView : UserControl
     {
         public UnionInfoView()
         {

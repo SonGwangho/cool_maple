@@ -18,7 +18,7 @@ namespace cool_maple.View
     /// <summary>
     /// ItemEquipmentView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class ItemEquipmentView : Page
+    public partial class ItemEquipmentView : UserControl
     {
         public ItemEquipmentView()
         {

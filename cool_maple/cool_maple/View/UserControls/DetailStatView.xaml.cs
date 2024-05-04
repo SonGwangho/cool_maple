@@ -1,4 +1,6 @@
-﻿using System;
+﻿using cool_maple.API;
+using cool_maple.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +20,7 @@ namespace cool_maple.View
     /// <summary>
     /// DetatilStatView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class DetatilStatView : Page
+    public partial class DetatilStatView : UserControl
     {
         public DetatilStatView()
         {
