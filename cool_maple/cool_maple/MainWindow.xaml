@@ -9,7 +9,7 @@
         xmlns:uControls="clr-namespace:cool_maple.View"
         mc:Ignorable="d"
         Background="#343238"
-        Title="MainWindow" Width="600" Height="980" Closed="Window_Closed">
+        Title="멋진 메이플 조회" Width="600" Height="980" Closed="Window_Closed">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
