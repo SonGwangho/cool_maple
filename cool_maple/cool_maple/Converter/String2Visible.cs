@@ -10,7 +10,7 @@ namespace cool_maple.Converter
         {
             if (value is null || value.ToString() == "")
             {
-                return Visibility.Collapsed;
+                return Visibility.Visible;
             }
             return Visibility.Visible;
         }

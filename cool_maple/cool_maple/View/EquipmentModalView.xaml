@@ -133,7 +133,7 @@
                 <StackPanel Visibility="{Binding Path=ModalProperties.PotentialOptionGrade, Converter={StaticResource String2Visible}}">
                     <Rectangle Fill="White" Height="1" Margin="0 7 0 3"/>
                     <DockPanel>
-                        <Grid>
+                        <Grid Margin="5 0 0 0">
                             <Rectangle Width="15" Height="15" RadiusX="3" RadiusY="3" Fill="{Binding ModalProperties.PotentialOptionGrade, Converter={StaticResource Type2Color}}"/>
                             <TextBlock Text="{Binding ModalProperties.PotentialOptionGrade, Converter={StaticResource Type2String}}" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -162,7 +162,7 @@
                 <StackPanel Visibility="{Binding Path=ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource String2Visible}}">
                     <Rectangle Fill="White" Height="1" Margin="0 3 0 3"/>
                     <DockPanel>
-                        <Grid>
+                        <Grid Margin="5 0 0 0">
                             <Rectangle Width="15" Height="15" RadiusX="3" RadiusY="3" Fill="{Binding ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource Type2Color}}"/>
                             <TextBlock Text="{Binding ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource Type2String}}" 
                                        VerticalAlignment="Center" HorizontalAlignment="Center"

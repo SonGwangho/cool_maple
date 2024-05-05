@@ -47,21 +47,21 @@ namespace cool_maple.View
         private void HeightResize()
         {
             var equipViewModel = DataContext as EquipmentModalViewModel;
-            int height = 760;
+            int height = 740;
 
             if (equipViewModel.ModalProperties.PotentialOptionGrade is null || equipViewModel.ModalProperties.PotentialOptionGrade == "")
             {
-                height -= 100;
+                height -= 98;
             }
 
             if (equipViewModel.ModalProperties.AdditionalPotentialOptionGrade is null || equipViewModel.ModalProperties.AdditionalPotentialOptionGrade == "")
             {
-                height -= 100;
+                height -= 95;
             }
 
             if (equipViewModel.ModalProperties.SoulName is null || equipViewModel.ModalProperties.SoulName == "")
             {
-                height -= 60;
+                height -= 55;
             }
 
             Height = height;
