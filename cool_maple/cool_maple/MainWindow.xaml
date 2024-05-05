@@ -33,7 +33,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border CornerRadius="50"/>
-        <TextBox Grid.Row="0" x:Name="CharacterName" Text="날속인건희" KeyDown="CharacterName_KeyDown"></TextBox>
+        <TextBox Grid.Row="0" x:Name="CharacterName" Text="" KeyDown="CharacterName_KeyDown"></TextBox>
         <Button Grid.Row="1" DockPanel.Dock="Top" Content="정보조회" Click="Button_Click"/>
         <Grid Grid.Row="2" Height="200" Background="White">
             <Grid.ColumnDefinitions>

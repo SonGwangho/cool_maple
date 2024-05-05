@@ -1,6 +1,9 @@
 ﻿using cool_maple.API;
+using cool_maple.Classes;
 using cool_maple.ViewModel;
+using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,6 +26,11 @@ namespace cool_maple
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
 
+            if (LocalInfo.instance.ChracterInfo.CharacterName is not null)
+            {
+                this.CharacterName.Text = LocalInfo.instance.ChracterInfo.CharacterName;
+            }
+
             if (this.CharacterName.Text.Length > 1) CharacterSearch();
         }
 
@@ -44,6 +52,7 @@ namespace cool_maple
             try
             {
                 await MapleAPI.SetCharacter(this.CharacterName.Text);
+                LocalInfo.instance.setCharacterName(this.CharacterName.Text);
                 var viewModel = DataContext as MainWindowViewModel;
                 if (viewModel != null)
                 {
