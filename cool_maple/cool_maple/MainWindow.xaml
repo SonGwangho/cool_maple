@@ -9,7 +9,7 @@
         xmlns:uControls="clr-namespace:cool_maple.View"
         mc:Ignorable="d"
         Background="#343238"
-        Title="MainWindow" Width="700" Height="950">
+        Title="MainWindow" Width="600" Height="980" Closed="Window_Closed">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -70,7 +70,7 @@
             </DockPanel>
         </Grid>
         <Grid Grid.Row="3">
-            <TabControl BorderThickness="0">
+            <TabControl Margin="0 10 0 0" BorderThickness="0">
                 <TabControl.Background>
                     <SolidColorBrush Color="#1e2e3a" Opacity="0.6"/>
                 </TabControl.Background>

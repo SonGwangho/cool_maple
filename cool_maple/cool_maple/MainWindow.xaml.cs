@@ -47,11 +47,12 @@ namespace cool_maple
                 var viewModel = DataContext as MainWindowViewModel;
                 if (viewModel != null)
                 {
-                    await viewModel.SetBasic();
-                    await viewModel.SetPopulatity();
-                    await viewModel.SetUnion();
-                    await viewModel.SetDojang();
-                    await viewModel.SetStat();
+                    viewModel.SetBasic();
+                    viewModel.SetPopulatity();
+                    viewModel.SetUnion();
+                    viewModel.SetDojang();
+                    viewModel.SetStat();
+                    await viewModel.SetEquipment();
 
                     viewModel.BuffText = viewModel.CharacterStatProperties.FinalStat[33].StatValue + "초" + " / " + viewModel.CharacterStatProperties.FinalStat[34].StatValue + "%";
                 }
@@ -60,6 +61,11 @@ namespace cool_maple
             {
                 MessageBox.Show("아이디 틀린듯?");
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

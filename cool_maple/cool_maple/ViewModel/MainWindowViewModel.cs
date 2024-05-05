@@ -1,6 +1,7 @@
 ﻿using cool_maple.API;
 using cool_maple.Model;
 using System.ComponentModel;
+using System.Windows;
 
 namespace cool_maple.ViewModel
 {
@@ -94,6 +95,17 @@ namespace cool_maple.ViewModel
             }
         }
 
+        private int _clickedEquipIndex;
+        public int ClickedEquipIndex
+        {
+            get { return _clickedEquipIndex; }
+            set
+            {
+                _clickedEquipIndex = value;
+                OnPropertyChanged(nameof(ClickedEquipIndex));
+            }
+        }
+
         public async Task SetBasic()
         {
             var response = await MapleAPI.GetBasic();
@@ -135,8 +147,6 @@ namespace cool_maple.ViewModel
             var response = await MapleAPI.getCharacterDojang();
             CharacterDojangProperties = response;
         }
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

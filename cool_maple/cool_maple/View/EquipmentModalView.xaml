@@ -1,0 +1,204 @@
+﻿<Window x:Class="cool_maple.View.EquipmentModalView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cool_maple.View"
+        xmlns:converter="clr-namespace:cool_maple.Converter"
+        xmlns:vm="clr-namespace:cool_maple.ViewModel"
+        mc:Ignorable="d"
+        Background="Transparent"
+        Height="760" Width="360" Activated="Window_Activated" WindowStyle="None">
+    <Window.DataContext>
+        <vm:EquipmentModalViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/LabelStyle.xaml"/>
+                <ResourceDictionary Source="../Themes/EquipStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converter:Float2String x:Key="Float2String"/>
+            <converter:Int2String x:Key="Int2String"/>
+            <converter:String2Url x:Key="String2Url"/>
+            <converter:Type2Color x:Key="Type2Color"/>
+            <converter:Cutt2String x:Key="Cutt2String"/>
+            <converter:Type2String x:Key="Type2String"/>
+            <converter:String2Visible x:Key="String2Visible"/>
+            <converter:null2String x:Key="null2String"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Border>
+            <StackPanel>
+                <Label Style="{StaticResource ModalItemNameStyle}"
+                       Content="{Binding ModalProperties.ItemName}"
+                       Margin="0 5 0 0"/>
+                <Label Style="{StaticResource ModalSmallStyle}"
+                       Content="{Binding ModalProperties.PotentialOptionGrade}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Style="{StaticResource NonClickEquipmentStyle}"
+                           BorderBrush="{Binding ModalProperties.PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                           Content="{Binding ModalProperties.ItemIcon , Converter={StaticResource String2Url}}"/>
+                    <DockPanel Grid.Column="1">
+                        <Label DockPanel.Dock="Top"
+                               HorizontalAlignment="Left"
+                               Margin="0 30 0 0"
+                               Style="{StaticResource ModalMediumReqStyle}"
+                               Tag="LEV"
+                               Content="{Binding ModalProperties.ItemBaseOption.BaseEquipmentLevel, Converter={StaticResource Int2String}}"/>
+                        <Grid DockPanel.Dock="Bottom">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <Label HorizontalAlignment="Left"
+                                       Style="{StaticResource ModalSmallReqStyle}"
+                                       Tag="STR"
+                                       Content="N/A"/>
+                                <Label HorizontalAlignment="Left"
+                                       Style="{StaticResource ModalSmallReqStyle}"
+                                       Tag="DEX"
+                                       Content="N/A"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <Label HorizontalAlignment="Left"
+                                       Style="{StaticResource ModalSmallReqStyle}"
+                                       Tag="LUK"
+                                       Content="N/A"/>
+                                <Label HorizontalAlignment="Left"
+                                       Style="{StaticResource ModalSmallReqStyle}"
+                                       Tag="INT"
+                                       Content="N/A"/>
+                            </StackPanel>
+                        </Grid>
+                    </DockPanel>
+                </Grid>
+                <Rectangle Fill="White" Height="1" Margin="0 10 0 3"/>
+                <StackPanel>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="STR"
+                           Content="{Binding ModalProperties.ItemTotalOption.Str, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="DEX"
+                           Content="{Binding ModalProperties.ItemTotalOption.Dex, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="INT"
+                           Content="{Binding ModalProperties.ItemTotalOption.Int, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="LUK"
+                           Content="{Binding ModalProperties.ItemTotalOption.Luk, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="최대 HP"
+                           Content="{Binding ModalProperties.ItemTotalOption.MaxHp, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="최대 MP"
+                           Content="{Binding ModalProperties.ItemTotalOption.MaxMp, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="최대 HP (%)"
+                           Content="{Binding ModalProperties.ItemTotalOption.MaxHpRate, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="최대 MP (%)"
+                           Content="{Binding ModalProperties.ItemTotalOption.MaxMpRate, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="공격력"
+                           Content="{Binding ModalProperties.ItemTotalOption.AttackPower, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="마력"
+                           Content="{Binding ModalProperties.ItemTotalOption.MagicPower, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="보스 몬스터 공격 시 데미지"
+                           Content="{Binding ModalProperties.ItemTotalOption.BossDamage, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="몬스터 방어율 무시"
+                           Content="{Binding ModalProperties.ItemTotalOption.IgnoreMonsterArmor, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="데미지"
+                           Content="{Binding ModalProperties.ItemTotalOption.Damage, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="올스탯"
+                           Content="{Binding ModalProperties.ItemTotalOption.AllStat, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="업그레이드 가능 횟수"
+                           Content="{Binding ModalProperties.ScrollUpgradableCount, Converter={StaticResource Int2String}}"/>
+                    <Label Style="{StaticResource ModalOptionStyle}"
+                           Tag="가위 사용 가능 횟수"
+                           Content="{Binding ModalProperties.CuttableCount, Converter={StaticResource Cutt2String}}"/>
+                </StackPanel>
+                <StackPanel Visibility="{Binding Path=ModalProperties.PotentialOptionGrade, Converter={StaticResource String2Visible}}">
+                    <Rectangle Fill="White" Height="1" Margin="0 7 0 3"/>
+                    <DockPanel>
+                        <Grid>
+                            <Rectangle Width="15" Height="15" RadiusX="3" RadiusY="3" Fill="{Binding ModalProperties.PotentialOptionGrade, Converter={StaticResource Type2Color}}"/>
+                            <TextBlock Text="{Binding ModalProperties.PotentialOptionGrade, Converter={StaticResource Type2String}}" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontSize="12" Margin="0 0 0 2"
+                                       FontWeight="ExtraBold"/>
+                        </Grid>
+                        <Label Style="{StaticResource ModalMediumStyle}"
+                               Content="잠재옵션"
+                               HorizontalAlignment="Left"
+                               Foreground="{Binding ModalProperties.PotentialOptionGrade, Converter={StaticResource Type2Color}}"/>
+                    </DockPanel>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 2"
+                           Content="{Binding ModalProperties.PotentialOption1, Converter={StaticResource null2String}}"/>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 2"
+                           Content="{Binding ModalProperties.PotentialOption2, Converter={StaticResource null2String}}"/>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 2"
+                           Content="{Binding ModalProperties.PotentialOption3, Converter={StaticResource null2String}}"/>
+                </StackPanel>
+                
+                <StackPanel Visibility="{Binding Path=ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource String2Visible}}">
+                    <Rectangle Fill="White" Height="1" Margin="0 3 0 3"/>
+                    <DockPanel>
+                        <Grid>
+                            <Rectangle Width="15" Height="15" RadiusX="3" RadiusY="3" Fill="{Binding ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource Type2Color}}"/>
+                            <TextBlock Text="{Binding ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource Type2String}}" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontSize="12" Margin="0 0 0 2"
+                                       FontWeight="ExtraBold"/>
+                        </Grid>
+                        <Label Style="{StaticResource ModalMediumStyle}"
+                               Content="에디셔널 잠재옵션"
+                               HorizontalAlignment="Left"
+                               Foreground="{Binding ModalProperties.AdditionalPotentialOptionGrade, Converter={StaticResource Type2Color}}"/>
+                    </DockPanel>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 2"
+                           Content="{Binding ModalProperties.AdditionalPotentialOption1, Converter={StaticResource null2String}}"/>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 2"
+                           Content="{Binding ModalProperties.AdditionalPotentialOption2, Converter={StaticResource null2String}}"/>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 2"
+                           Content="{Binding ModalProperties.AdditionalPotentialOption3, Converter={StaticResource null2String}}"/>
+                </StackPanel>
+                <StackPanel Visibility="{Binding Path=ModalProperties.SoulName, Converter={StaticResource String2Visible}}">
+                    <Rectangle Fill="White" Height="1" Margin="0 3 0 3"/>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 3 0 5"
+                           Content="{Binding ModalProperties.SoulName, Converter={StaticResource null2String}}"/>
+                    <Label Style="{StaticResource ModalSmallStyle}"
+                           HorizontalAlignment="Left"
+                           Margin="10 0 0 5"
+                           Content="{Binding ModalProperties.SoulOption, Converter={StaticResource null2String}}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -9,22 +9,21 @@ using System.Threading.Tasks;
 
 namespace cool_maple.ViewModel
 {
-    public class DetailStatViewModel : INotifyPropertyChanged
+    public class EquipmentModalViewModel : INotifyPropertyChanged
     {
-        private CharacterStatModel _characterStatProperties;
-        public CharacterStatModel CharacterStatProperties
+        private ItemEquipmentModel _modalProperties;
+        public ItemEquipmentModel ModalProperties
         {
-            get { return _characterStatProperties; }
+            get { return _modalProperties; }
             set
             {
-                _characterStatProperties = value;
-                OnPropertyChanged(nameof(CharacterStatProperties));
+                _modalProperties = value;
+                OnPropertyChanged(nameof(ModalProperties));
             }
         }
-        public async Task SetStat()
+        public async Task SetModal(MainWindowViewModel vm)
         {
-            var response = await MapleAPI.getStat();
-            CharacterStatProperties = response;
+            ModalProperties = vm.CharacterItemEquipmentProperties.ItemEquipment[vm.ClickedEquipIndex];
         }
 
 
@@ -34,4 +33,6 @@ namespace cool_maple.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
+
+    
 }

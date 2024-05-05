@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:cool_maple.View"
       xmlns:converter="clr-namespace:cool_maple.Converter"
-      xmlns:vm="clr-namespace:cool_maple.ViewModel"
       mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -18,7 +17,7 @@
             <converter:DecimalPercent x:Key="DecimalPercent"/>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Margin="0 10 0 0">
+    <Grid Margin="0 5 0 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

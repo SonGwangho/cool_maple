@@ -1,12 +1,151 @@
 ﻿<UserControl x:Class="cool_maple.View.ItemEquipmentView"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:cool_maple.View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:cool_maple.View"
+             xmlns:converter="clr-namespace:cool_maple.Converter"
       mc:Ignorable="d" >
-
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Themes/LabelStyle.xaml"/>
+                <ResourceDictionary Source="../../Themes/EquipStyle.xaml"/>
+                <ResourceDictionary Source="../../Themes/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converter:Float2String x:Key="Float2String"/>
+            <converter:Int2String x:Key="Int2String"/>
+            <converter:String2Url x:Key="String2Url"/>
+            <converter:Type2Color x:Key="Type2Color"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        
+        <Border>
+            <Button Style="{StaticResource ButtonGrid}"
+                Background="Transparent"
+                FocusVisualStyle="{x:Null}"
+                Click="Grid_MouseClick">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource EquipmentStyle}"  x:Name="Btn11"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[11].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[11].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c1bcb4" Tag="RING" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource EquipmentStyle}"  x:Name="Btn0"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[0].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[0].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="CAP" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="0" Grid.Column="4" Style="{StaticResource EquipmentStyle}"  x:Name="Btn22"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[22].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[22].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#b8c6ca" Tag="EMBLEM" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource EquipmentStyle}"  x:Name="Btn12"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[12].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[12].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c1bcb4" Tag="RING" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource EquipmentStyle}"  x:Name="Btn23"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[23].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[23].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#b8c6ca" Tag="PENDANT" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="1" Grid.Column="2" Style="{StaticResource EquipmentStyle}"  x:Name="Btn1"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[1].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[1].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="FORE&#10;HEAD" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="1" Grid.Column="4" Style="{StaticResource EquipmentStyle}"  x:Name="Btn21"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[21].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[21].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#b8c6ca" Tag="BADGE" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource EquipmentStyle}"  x:Name="Btn13"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[13].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[13].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c1bcb4" Tag="RING" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource EquipmentStyle}"  x:Name="Btn15"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[15].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[15].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#b8c6ca" Tag="PENDANT" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource EquipmentStyle}"  x:Name="Btn2"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[2].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[2].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="EYE&#10;ACC" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource EquipmentStyle}"  x:Name="Btn3"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[3].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[3].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="EAR&#10;ACC" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="2" Grid.Column="4" Style="{StaticResource EquipmentStyle}"  x:Name="Btn16"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[16].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[16].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#b8c6ca" Tag="MEDAL" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="3" Grid.Column="0" Style="{StaticResource EquipmentStyle}"  x:Name="Btn14"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[14].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[14].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c1bcb4" Tag="RING" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource EquipmentStyle}"  x:Name="Btn10"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[10].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[10].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#ababab" Tag="WEAPON" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="3" Grid.Column="2" Style="{StaticResource EquipmentStyle}"  x:Name="Btn4"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[4].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[4].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="CLOTHES" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource EquipmentStyle}"  x:Name="Btn18"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[18].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[18].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="SHOULDER" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="3" Grid.Column="4" Style="{StaticResource EquipmentStyle}"  x:Name="Btn9"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[9].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[9].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#ababab" Tag="SUB&#10;WEAPON" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="4" Grid.Column="0" Style="{StaticResource EquipmentStyle}"  x:Name="Btn19"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[19].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[19].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="POKET" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource EquipmentStyle}"  x:Name="Btn17"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[17].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[17].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="BELT" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="4" Grid.Column="2" Style="{StaticResource EquipmentStyle}"  x:Name="Btn5"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[5].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[5].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="PANTS" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource EquipmentStyle}"  x:Name="Btn7"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[7].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[7].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="GLOVES" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="4" Grid.Column="4" Style="{StaticResource EquipmentStyle}"  x:Name="Btn8"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[8].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[8].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="CAPE" Click="Btn_MouseClick"/>
+                    <Button Grid.Row="5" Grid.Column="2" Style="{StaticResource EquipmentStyle}"  x:Name="Btn6"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[6].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[6].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#c7c7c7" Tag="SHOES" Click="Btn_MouseClick"/>
+                    <!--<Button Grid.Row="5" Grid.Column="3" Style="{StaticResource EquipmentStyle}"  x:Name="Btn"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[0].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[0].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#afb4bb" Tag="ANDROID" Click="Btn_MouseClick"/>-->
+                    <Button Grid.Row="5" Grid.Column="4" Style="{StaticResource EquipmentStyle}"  x:Name="Btn20"
+                        Content="{Binding CharacterItemEquipmentProperties.ItemEquipment[20].ItemIcon, Converter={StaticResource String2Url}}"
+                        BorderBrush="{Binding CharacterItemEquipmentProperties.ItemEquipment[20].PotentialOptionGrade ,Converter={StaticResource Type2Color}}"
+                        Background="#afb4bb" Tag="HEART" Click="Btn_MouseClick"/>
+
+
+                </Grid>
+            </Button>
+        </Border>
     </Grid>
 </UserControl>

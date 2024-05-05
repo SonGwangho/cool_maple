@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\EquipmentModalView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\UserControls\DetailStatView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,10 +24,19 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\EquipStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\LabelStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\TabStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EquipmentModalView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UserControls\DetailStatView.xaml">
